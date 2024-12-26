@@ -3,7 +3,11 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { LoginForm } from "./Components/UserAdminAuth/LoginForm";
 import { Register } from "./Components/UserAdminAuth/Register";
-import { Home } from "./Main/Home";
+import { Home } from "./Home";
+import { Blogs } from "./Blogs";
+import { ContactUs } from "./ContactUs";
+
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,6 +20,8 @@ function App() {
         <Route path="/loginform" element={<LoginForm />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/ContactUs" element={<ContactUs />} />
         {/* Add more routes as needed */}
       </Routes>
     </div>

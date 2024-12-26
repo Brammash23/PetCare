@@ -1,0 +1,95 @@
+{
+    "lastUpdated": "2024-12-25T14:30:00.000Z",
+    "blogs": [
+      {
+        "id": 1,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnaQ29btAg-YkZm4z4QoYgRnQ5o3FHGvgGmw&s",
+        "author": "John Doe",
+        "heading": "10 Ways to Keep Your Dog Happy and Healthy",
+        "description": "Learn how to keep your furry friend happy and healthy with these simple tips.",
+        "date": "2024-12-23T10:00:00.000Z",
+        "topic": "Dog Care"
+      },
+      {
+        "id": 2,
+        "image": "data:image/jpeg;base64,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",
+        "author": "Jane Smith",
+        "heading": "The Benefits of Adopting a Senior Pet",
+        "description": "Discover the joys of adopting a senior pet and how it can change your life.",
+        "date": "2024-12-22T12:00:00.000Z",
+        "topic": "Pet Adoption"
+      },
+      {
+        "id": 3,
+        "image": "https://example.com/images/pet-friendly-home.jpg",
+        "author": "Bob Johnson",
+        "heading": "How to Create a Pet-Friendly Home",
+        "description": "Get tips on how to create a safe and comfortable home for your pets.",
+        "date": "2024-12-21T14:00:00.000Z",
+        "topic": "Home & Living"
+      },
+      {
+        "id": 4,
+        "image": "https://example.com/images/spaying-neutering.jpg",
+        "author": "Alice Brown",
+        "heading": "The Importance of Spaying or Neutering Your Pet",
+        "description": "Learn about the benefits of spaying or neutering your pet and how it can improve their health.",
+        "date": "2024-12-20T16:00:00.000Z",
+        "topic": "Pet Health"
+      },
+      {
+        "id": 5,
+        "image": "https://example.com/images/pet-food.jpg",
+        "author": "Mike Davis",
+        "heading": "How to Choose the Right Food for Your Pet",
+        "description": "Get advice on how to select the best food for your pet based on their age, breed, and health.",
+        "date": "2024-12-19T18:00:00.000Z",
+        "topic": "Pet Nutrition"
+      },
+      {
+        "id": 6,
+        "image": "https://example.com/images/pet-microchip.jpg",
+        "author": "Emily Taylor",
+        "heading": "The Benefits of Microchipping Your Pet",
+        "description": "Learn about the importance of microchipping your pet and how it can increase the chances of being reunited.",
+        "date": "2024-12-24T10:00:00.000Z",
+        "topic": "Pet Safety"
+      },
+      {
+        "id": 7,
+        "image": "https://example.com/images/pet-holiday-safety.jpg",
+        "author": "David Lee",
+        "heading": "How to Keep Your Pet Safe During the Holidays",
+        "description": "Get tips on how to keep your pet safe and happy during the holiday season.",
+        "date": "2024-12-25T12:00:00.000Z",
+        "topic": "Holiday Tips"
+      },
+      {
+        "id": 8,
+        "image": "https://example.com/images/pet-mental-stimulation.jpg",
+        "heading": "The Importance of Providing Mental Stimulation for Your Pet",
+        "description": "Learn about the importance of providing mental stimulation for your pet and how it can improve their behavior.",
+        "date": "2024-12-26T14:00:00.000Z",
+        "topic": "Pet Enrichment"
+      },
+      {
+        "id": 9,
+        "image": "https://example.com/images/pet-friendly-garden.jpg",
+        "author": "Olivia Martin",
+        "heading": "How to Create a Pet-Friendly Garden",
+        "description": "Get advice on how to create a pet-friendly garden that is safe and enjoyable for your pets.",
+        "date": "2024-12-27T16:00:00.000Z",
+        "topic": "Home & Living"
+      },
+      {
+        "id": 10,
+        "image": "https://example.com/images/pet-insurance.jpg",
+        "author": "Jackson Hall",
+        "heading": "The Benefits of Pet Insurance",
+        "description": "Learn about the benefits of pet insurance and how it can help you provide the best care for your pet.",
+        "date": "2024-12-28T18:00:00.000Z",
+        "topic": "Pet Insurance"
+      }
+    ]
+  }
+  

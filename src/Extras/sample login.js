@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { MdPets } from "react-icons/md";
 import { useState } from 'react';
-import { Validity } from './LoginValidity'; // Ensure this validation function is correct
+import { Validity } from './LoginValidity';
 import axios from 'axios';
 
 export const LoginForm = () => {
@@ -9,8 +9,12 @@ export const LoginForm = () => {
     email: "",
     password: "",
   });
-  const [error, setError] = useState({});
-  const Navigate = useNavigate();
+  const [error, setError] = useState({
+    email:"",
+    password:""
+  });
+   // for navigation after successful login
+   const Navigate = useNavigate();
 
   // Handle input changes
   const handleInput = (e) => {
@@ -21,31 +25,43 @@ export const LoginForm = () => {
     }));
   };
 
+  // Validate user input
+
+
   // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     // Validate inputs
-    const validationErrors = Validity(user);
+    
+  //  const handleSubmit = (e) => {
+    e.preventDefault();
+  
+    // Validate inputs
+    const validationErrors = Validity(user); // Make sure this function returns an error object
     setError(validationErrors);
-
-    if (!validationErrors.email && !validationErrors.password) {
+    if (!validationErrors.email && !validationErrors.password && !validationErrors.name) {
+      console.log("HII");
       axios.post("http://localhost:8081/loginform", user)
         .then((res) => {
-          if (res.data.status === "ok") {
-            alert("Login successful!");
-            localStorage.setItem('email', user.email); // Store email in localStorage
-            Navigate('/home'); // Navigate to the home page
-          } else if (res.data === "failure") {
-            alert("Invalid email or password. Please try again.");
-          }
+          if(res.data==="ok")
+            {
+              alert("Logged in");
+              Navigate('/')
+            } 
+            else
+            {
+              alert("Enter a Valid password")
+              Navigate('/loginform')
+            }
+         
+     // Redirect after successful registration
         })
         .catch((err) => {
-          console.error("Error occurred while logging in: ", err);
-          alert("An error occurred. Please try again later.");
+          console.error("Error occurred while registering: ", err);
         });
-    }
-  };
+    } // Log the validation errors
+  }; 
 
   return (
     <div className="font-sans m-0 flex justify-center items-center min-h-screen bg-gray-100">
@@ -71,7 +87,7 @@ export const LoginForm = () => {
                 value={user.email}
                 required
               />
-              {error.email && <span className="text-sm text-red-500">{error.email}</span>}
+              {Error.email && <span className="text-sm text-red-500">{Error.email}</span>}
             </div>
 
             {/* Password Input */}
@@ -85,8 +101,11 @@ export const LoginForm = () => {
                 value={user.password}
                 required
               />
-              {error.password && <span className="text-sm text-red-500">{error.password}</span>}
+              {Error.password && <span className="text-sm text-red-500">{Error.password}</span>}
             </div>
+
+            {/* General Error Message */}
+            {error.general && <span className="text-sm text-red-500">{error.general}</span>}
 
             {/* Login Button */}
             <button

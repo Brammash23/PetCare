@@ -6,6 +6,9 @@ import { Register } from "./Components/UserAdminAuth/Register";
 import { Home } from "./Home";
 import { Blogs } from "./Blogs";
 import { ContactUs } from "./ContactUs";
+import { AdoptCatlog } from "./AdoptCatlog";
+import { About } from "./About";
+import { Account } from "./Account/Account";
 
 
 
@@ -22,10 +25,12 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/ContactUs" element={<ContactUs />} />
+        <Route path="/adopt" element={<AdoptCatlog />} />
+        <Route path="/about" element={<About />} />
         {/* Add more routes as needed */}
       </Routes>
     </div>
-
+  <Account />
    </>
   );
 }

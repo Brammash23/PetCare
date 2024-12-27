@@ -9,11 +9,20 @@ export const Register = () => {
     name: "",
     email: "",
     password: "",
+    phone:"",
   });
+
+  const [Login,setLogin]=useState(
+    {
+      email:"",
+      Phone:"",
+    }
+  )
   const [Error, setError] = useState({
     email: "",
     password: "",
     name: "",
+    phone:"",
   });
   const Navigate = useNavigate();
 
@@ -32,22 +41,40 @@ export const Register = () => {
       email: "",
       password: "",
       name: "",
+      phone:""
     });
 
     const validationErrors = Validity(User); // Validating the inputs
     setError(validationErrors);
 
     // Check if there are no errors
-    if (!validationErrors.email && !validationErrors.password && !validationErrors.name) {
+    if (!validationErrors.email && !validationErrors.password && !validationErrors.name && !validationErrors.phone) {
       console.log("HII");
       axios.post("http://localhost:8081/register", User)
         .then((res) => {
-          Navigate('/loginform');
-          console.log("sucess")
+          if(!res.data.sqlMessage)
+          {
+            Navigate('/loginform');
+            console.log(res)
+            setLogin({
+              email:"",
+              phone:""
+            })
+          }
+          else
+          {
+            console.log(res)
+            alert("Email and Phone should be unique")
+            setLogin({
+              email:"*Email Should be Unique",
+              phone:"*Phone Should be Unique"
+            })
+          }
+      
      // Redirect after successful registration
         })
         .catch((err) => {
-          console.error("Error occurred while registering: ", err);
+          console.error(err);
         });
     }
   };
@@ -82,7 +109,18 @@ export const Register = () => {
               onChange={handleInput}
               required
             />
-            {Error.email && <span className="text-1xl text-sm text-red-500">{Error.email}</span>}
+            {<span className="text-1xl text-sm text-red-500">{Login.email}</span>}
+
+            <input
+              className="w-full p-4 mb-5 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-300"
+              type="phone"
+              placeholder="Mobile Number"
+              name="phone"
+              value={User.phone}
+              onChange={handleInput}
+              required
+            />
+            {<span className="text-1xl text-sm text-red-500">{Login.phone}</span>}
 
             <input
               className="w-full p-4 mb-5 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-300"

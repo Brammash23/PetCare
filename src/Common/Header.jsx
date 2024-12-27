@@ -75,6 +75,10 @@ export const Header = () => {
             >
               About Us
             </Link>
+            <Link
+              to="/account"
+              className="hover:bg-gray-300 hover:text-black px-4 py-2 rounded font-semibold"
+            >Account</Link>
           </div>
 
           {/* Contact Us Button */}

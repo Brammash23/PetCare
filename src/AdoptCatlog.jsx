@@ -1,19 +1,17 @@
-import { AboutUs } from "./About/AboutUs"
 import { Adopt } from "./Common/Adopt"
 import { Footer } from "./Common/Footer"
 import { Header } from "./Common/Header"
-import { Banner } from "./Main/Banner"
+import { Ads } from "./Extras/Ads"
 
-export const Home = () => {
+
+
+export const AdoptCatlog = () => {
   return (
     <>
-
     <Header />
-    <Banner />
+    <Ads />
     <Adopt />
-    <AboutUs />
     <Footer />
-
     </>
   )
 }

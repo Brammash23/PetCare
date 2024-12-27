@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-export const Banner = () => {
+export const Ads = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
-    'images/Banner-4.jpg',
-    'images/Banner-5.jpg',
-    'images/Banner-2.jpg',
-    'images/Banner-3.jpg',
-    'images/Banner-1.jpg',
+    '/images/Banner-3.jpg', // Use absolute paths for public folder assets
+    'https://placerspca.org/wp-content/uploads/2024/12/december-20244-promo-1024x1024.png',
   ];
 
-  // Automatically change images every 3 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // 3000ms = 3 seconds
+    }, 10000); // Change every 10 seconds
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
   }, [images.length]);

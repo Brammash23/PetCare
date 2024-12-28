@@ -9,6 +9,15 @@ import { ContactUs } from "./ContactUs";
 import { AdoptCatlog } from "./AdoptCatlog";
 import { About } from "./About";
 import { Account } from "./Account/Account";
+import { MyAccount } from "./myaccount";
+import { Adopt } from "./Common/Adopt";
+import { PetInfo } from "./PetInfo";
+import { AboutPet } from "./aboutpet";
+import { Adaption } from "./Adaption";
+import { Adaption_Verify } from "./adaption_verify";
+import { ViewAdoptions } from "./ViewAdoptions";
+
+
 
 
 
@@ -17,9 +26,14 @@ function App() {
 
   return (
    <>
+ 
     <div>
+  
       {/* Routes for navigation */}
       <Routes>
+      <Route path="/adaption_verify" element={<Adaption_Verify/>}/>
+      <Route path="/petinfo" element={  <AboutPet />} />
+        <Route path="/myaccount" element={  <MyAccount /> } />
         <Route path="/loginform" element={<LoginForm />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home />} />
@@ -27,10 +41,16 @@ function App() {
         <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="/adopt" element={<AdoptCatlog />} />
         <Route path="/about" element={<About />} />
+        <Route path="/view-adaptions" element={  <ViewAdoptions />} />
+      
+
         {/* Add more routes as needed */}
       </Routes>
+
+    
     </div>
-  <Account />
+    
+
    </>
   );
 }

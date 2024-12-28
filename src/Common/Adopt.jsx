@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 export const Adopt = () => {
   const [pets, setPets] = useState([]); // Store fetched pets data
@@ -10,13 +11,15 @@ export const Adopt = () => {
     age: "all",
   });
 
+  const navigate = useNavigate(); // Initialize navigate hook
+
   // Fetch pet data from the backend
   useEffect(() => {
-    const value = '0'; // Change this if needed for dynamic filtering
+    const value = "0"; // Change this if needed for dynamic filtering
     axios
-      .get(`http://localhost:8081/adopt?status=${value}`)  // Fetch pets based on status
+      .get(`http://localhost:8081/adopt?status=${value}`) // Fetch pets based on status
       .then((res) => {
-        setPets(res.data); // Set fetched pets data to state
+        setPets(res.data);
       })
       .catch((err) => {
         console.error("Error:", err); // Handle errors
@@ -27,6 +30,13 @@ export const Adopt = () => {
   const handleFilterChange = (e) => {
     const { id, value } = e.target;
     setFilters({ ...filters, [id]: value });
+  };
+
+  // Navigate to pet details page
+  const handleInfoClick = (petId) => {
+    console.log(petId) // Redirect to pet info page
+    localStorage.setItem("selectedPetId", petId); 
+    navigate("/petinfo")
   };
 
   // Filter pets based on the selected filters
@@ -105,7 +115,7 @@ export const Adopt = () => {
               onChange={handleFilterChange}
             >
               <option value="all">All</option>
-              <option value="puppy">puppy</option>
+              <option value="puppy">Puppy</option>
               <option value="adult">Adult</option>
               <option value="senior">Senior</option>
             </select>
@@ -123,13 +133,19 @@ export const Adopt = () => {
               className="text-center bg-white border rounded-lg overflow-hidden shadow-md"
             >
               <img
-                src={pet.image}
+                src={`data:image/jpeg;base64,${pet.image}`}
                 alt={pet.name}
                 className="w-full h-40 object-cover"
               />
               <div className="p-4">
                 <h2 className="text-lg font-semibold">{pet.name}</h2>
                 <p className="text-sm text-gray-500 capitalize">{pet.breed}</p>
+                <button
+                  onClick={() => handleInfoClick(pet.id)} // Pass pet ID to the handler
+                  className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 mx-auto"
+                >
+                  Info
+                </button>
               </div>
             </div>
           ))}

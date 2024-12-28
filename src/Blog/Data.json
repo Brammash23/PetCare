@@ -21,7 +21,7 @@
       },
       {
         "id": 3,
-        "image": "https://example.com/images/pet-friendly-home.jpg",
+        "image": "https://www.google.com/imgres?q=sparrow&imgurl=https%3A%2F%2Fcdn.download.ams.birds.cornell.edu%2Fapi%2Fv1%2Fasset%2F27311881%2F1200&imgrefurl=https%3A%2F%2Fbirdsoftheworld.org%2Fbow%2Fspecies%2Fhouspa%2Fcur%2Fintroduction&docid=NIOuUMV7H_FBWM&tbnid=Dvabnk6cGmvAnM&vet=12ahUKEwiYq7bgp8iKAxVUzjgGHf5uPCUQM3oECG4QAA..i&w=1200&h=720&hcb=2&ved=2ahUKEwiYq7bgp8iKAxVUzjgGHf5uPCUQM3oECG4QAA",
         "author": "Bob Johnson",
         "heading": "How to Create a Pet-Friendly Home",
         "description": "Get tips on how to create a safe and comfortable home for your pets.",
@@ -30,7 +30,7 @@
       },
       {
         "id": 4,
-        "image": "https://example.com/images/spaying-neutering.jpg",
+        "image": "https://www.shutterstock.com/image-photo/large-grey-cat-british-breed-plush-794961871",
         "author": "Alice Brown",
         "heading": "The Importance of Spaying or Neutering Your Pet",
         "description": "Learn about the benefits of spaying or neutering your pet and how it can improve their health.",

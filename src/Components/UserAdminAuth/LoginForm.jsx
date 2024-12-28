@@ -34,7 +34,10 @@ export const LoginForm = () => {
         .then((res) => {
           if (res.data.status === "ok") {
             alert("Login successful!");
-            localStorage.setItem('email', user.email); // Store email in localStorage
+            localStorage.setItem('email', user.email);
+            localStorage.setItem('loggedin', true);
+            localStorage.setItem('user_id', user.id);
+             // Store email in localStorage
             Navigate('/home'); // Navigate to the home page
           } else if (res.data === "failure") {
             alert("Invalid email or password. Please try again.");

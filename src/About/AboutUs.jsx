@@ -3,15 +3,13 @@ import React from 'react';
 export const AboutUs = () => {
   return (
     <>
+    {/* //Mission */}
       <div className="container mx-auto py-16">
       <div className="flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-8">About Us</h1>
       </div>
 
-      {/* Mission */}
-      
-
-      {/* Story */}
+{/* //Story */}
       <div className="flex flex-col-reverse md:flex-row items-center justify-center mb-16">
         <div className="w-full md:w-1/2">
           <img src="images/Fairytale.jpg" alt="Story" className="w-full object-cover h-96 rounded-lg" />
@@ -22,7 +20,7 @@ export const AboutUs = () => {
           Deekshana still remembers the day that changed her life forever. She was just a teenager, walking home from school on a hot summer afternoon. As she turned the corner onto her street, she heard a faint mewling sound coming from a nearby alleyway.
 Curious, Deekshana walked into the alley and found a tiny ball of fur cowering in the corner. It was a little kitten, no more than a few weeks old, with big green eyes and soft, fluffy fur. Deekshana's heart melted as she picked up the kitten and cradled it in her arms.
 As she walked home, Deekshana couldn't stop thinking about the little kitten and how it had ended up all alone in the alleyway.And as she looks back on her journey, Deekshana knows that it all started with that little ball of fur, Luna, who stole her heart and inspired her to make a difference in the world.
-+          </p>
+       </p>
         </div>
       </div>
       <div className="flex flex-col md:flex-row items-center justify-center mb-16">
@@ -47,8 +45,8 @@ As she walked home, Deekshana couldn't stop thinking about the little kitten and
   </div>
 </div>
 
-
-      {/* Who We Are */}
+{/* 
+  //Who we are */}
       <div className="flex flex-col md:flex-row items-center justify-center">
         <div className="w-full md:w-1/2">
           <img src="images/Organisation.jpg" alt="Who We Are" className="w-full object-cover h-96 rounded-lg" />

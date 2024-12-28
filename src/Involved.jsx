@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -12,6 +11,7 @@ import {
 export const Footer = () => {
   return (
     <footer className="bg-gray-800 w-full p-6 md:p-10 lg:p-16">
+      {/* Stats Section */}
       <div className="bg-gray-900 p-5 rounded-lg border-gray-600 mb-8 md:mb-12 lg:mb-16">
         <h3 className="text-2xl font-bold text-white text-center mb-2">
           Our Milestones
@@ -32,31 +32,27 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-between mb-8 md:mb-12 lg:mb-16">
+      {/* Links and Info Section */}
+      <div className="flex flex-wrap justify-between items-start mb-8 md:mb-12 lg:mb-16">
         {/* Quick Links */}
-        <div className="flex flex-col items-center w-full md:w-1/3 mb-4 md:mb-0">
-          <h4 className="text-white text-2xl font-bold text-center">Quick Links</h4>
-          <div className="h-2 w-1/3 mx-auto bg-gray-600 mb-2" />
-          <ul className="mt-2 list-none text-gray-300 text-center text-lg">
-            {[
-              { name: 'Home', path: '/home' },
-              { name: 'About Us', path: '/about' },
-              { name: 'Adopt', path: '/adopt' },
-              { name: 'Contact Us', path: '/contact' },
-            ].map(({ name, path }, idx) => (
+        <div className="flex flex-col items-start w-full md:w-1/3 mb-4 md:mb-0">
+          <h4 className="text-white text-2xl font-bold text-center md:text-left">Quick Links</h4>
+          <div className="h-2 w-1/3 mx-auto bg-gray-600 mb-2 md:mx-0" />
+          <ul className="mt-2 list-none text-gray-300 text-center md:text-left text-lg">
+            {['Home', 'AboutUs', 'Adopt', 'ContactUs'].map((link, idx) => (
               <li key={idx}>
-                <Link to={path} className="hover:text-gray-100">
-                  {name}
-                </Link>
+                <a href="#" className="hover:text-gray-100">
+                  {link}
+                </a>
               </li>
             ))}
           </ul>
         </div>
 
         {/* Contact Us */}
-        <div className="flex flex-col items-center w-full md:w-1/4 mb-4 md:mb-0">
-          <h4 className="text-white text-2xl font-bold text-center">Contact Us</h4>
-          <div className="h-2 w-1/3 mx-auto bg-gray-600 mb-2" />
+        <div className="flex flex-col items-start w-full md:w-1/4 mb-4 md:mb-0">
+          <h4 className="text-white text-2xl font-bold text-center md:text-left">Contact Us</h4>
+          <div className="h-2 w-1/3 mx-auto bg-gray-600 mb-2 md:mx-0" />
           <div className="flex items-center mt-2">
             <FaPhoneAlt className="mr-2 text-2xl text-gray-300" />
             <a href="tel:+919361683807" className="text-gray-300">
@@ -69,7 +65,7 @@ export const Footer = () => {
               brammashm2004@gmail.com
             </a>
           </div>
-          <p className="text-gray-300 mt-2 text-center">12th Manikam St, Madurai, Tamilnadu</p>
+          <p className="text-gray-300 mt-2 text-center md:text-left">12th Manikam St, Madurai, Tamilnadu</p>
         </div>
 
         {/* About Us */}

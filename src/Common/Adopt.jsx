@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom"; 
 
 export const Adopt = () => {
-  const [pets, setPets] = useState([]); // Store fetched pets data
+  const [pets, setPets] = useState([]); 
   const [filters, setFilters] = useState({
     petType: "all",
     breed: "all",
@@ -11,35 +11,34 @@ export const Adopt = () => {
     age: "all",
   });
 
-  const navigate = useNavigate(); // Initialize navigate hook
+  const navigate = useNavigate(); 
 
-  // Fetch pet data from the backend
+
   useEffect(() => {
-    const value = "0"; // Change this if needed for dynamic filtering
+    const value = "0"; 
     axios
-      .get(`http://localhost:8081/adopt?status=${value}`) // Fetch pets based on status
+      .get(`http://localhost:8081/adopt?status=${value}`) 
       .then((res) => {
         setPets(res.data);
       })
       .catch((err) => {
-        console.error("Error:", err); // Handle errors
+        console.error("Error:", err); 
       });
-  }, []); // Empty dependency array ensures this runs only once when the component mounts
+  }, []); 
 
-  // Handle filter changes
   const handleFilterChange = (e) => {
     const { id, value } = e.target;
     setFilters({ ...filters, [id]: value });
   };
 
-  // Navigate to pet details page
+
   const handleInfoClick = (petId) => {
-    console.log(petId) // Redirect to pet info page
+    console.log(petId) 
     localStorage.setItem("selectedPetId", petId); 
     navigate("/petinfo")
   };
 
-  // Filter pets based on the selected filters
+ 
   const filteredPets = pets.filter((pet) => {
     const { petType, breed, gender, age } = filters;
     return (
@@ -57,7 +56,7 @@ export const Adopt = () => {
           Find Your New Best Friend
         </h1>
 
-        {/* Filters Section */}
+
         <div className="flex flex-wrap justify-between gap-4 mb-6">
           <div className="w-full sm:w-1/2 md:w-1/4">
             <label htmlFor="petType" className="block mb-2 text-sm font-medium">
@@ -125,7 +124,6 @@ export const Adopt = () => {
           </button>
         </div>
 
-        {/* Pet Cards Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredPets.map((pet) => (
             <div
@@ -141,7 +139,7 @@ export const Adopt = () => {
                 <h2 className="text-lg font-semibold">{pet.name}</h2>
                 <p className="text-sm text-gray-500 capitalize">{pet.breed}</p>
                 <button
-                  onClick={() => handleInfoClick(pet.id)} // Pass pet ID to the handler
+                  onClick={() => handleInfoClick(pet.id)}
                   className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 mx-auto"
                 >
                   Info

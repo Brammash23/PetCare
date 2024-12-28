@@ -11,7 +11,6 @@ export const Adaption = () => {
     email: '',
     address: '',
     pet_id: localStorage.getItem('selectedPetId'),
-    user_id:localStorage.getItem('user_id'),
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false); // State to toggle success message
@@ -21,6 +20,8 @@ export const Adaption = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formData);
+    console.log(localStorage.getItem('user_id'))
+    console.log(localStorage.getItem('pet_id'))
 
     axios
       .post('http://localhost:8081/adaption_verify', formData)

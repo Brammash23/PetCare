@@ -47,7 +47,6 @@ export const Register = () => {
     const validationErrors = Validity(User); // Validating the inputs
     setError(validationErrors);
 
-    // Check if there are no errors
     if (!validationErrors.email && !validationErrors.password && !validationErrors.name && !validationErrors.phone) {
       console.log("HII");
       axios.post("http://localhost:8081/register", User)
@@ -70,8 +69,7 @@ export const Register = () => {
               phone:"*Phone Should be Unique"
             })
           }
-      
-     // Redirect after successful registration
+
         })
         .catch((err) => {
           console.error(err);

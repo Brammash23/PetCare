@@ -13,23 +13,21 @@ export const Account = () => {
 
   const Navigate=useNavigate()
   
-  const [loading, setLoading] = useState(true); // To show loading while fetching data
+  const [loading, setLoading] = useState(true); 
 
-  // Fetch user data from the API when the component mounts
+  
   useEffect(() => {
     const email = localStorage.getItem('email');
-    console.log("Stored email:", email); // Debugging the email from localStorage
+    console.log("Stored email:", email);
 
     axios
       .get("http://localhost:8081/account", {
         headers: {
-          "Authorization": `Bearer ${email}`, // sending email as token or header
+          "Authorization": `Bearer ${email}`, 
         },
       })
       .then((response) => {
-        console.log(response.data[0].id); // Log the response to see if it contains name, email, etc.
-        
-        // If the response is as expected, set the user state
+        console.log(response.data[0].id);
         if (response.data) {
           setUser({
             id: response.data[0].id,
@@ -41,16 +39,16 @@ export const Account = () => {
         }
       })
       .catch((error) => {
-        console.error("Error:", error); // Handle the error
+        console.error("Error:", error);
       })
       .finally(() => {
-        setLoading(false); // Stop loading after the data is fetched
+        setLoading(false);
       });
       console.log(User)
-  }, []); // Empty dependency array ensures this runs once when the component mounts
+  }, []); 
 
   if (loading) {
-    return <div>Loading...</div>; // Show loading indicator while data is being fetched
+    return <div>Loading...</div>; 
   }
   const handleRegister = (e) => {
     e.preventDefault();
@@ -68,13 +66,12 @@ export const Account = () => {
     <>
       <div className="min-h-screen flex items-center justify-center bg-gray-100 py-10">
         <div className="max-w-lg w-full bg-white rounded-lg shadow-md p-6">
-          {/* Profile Header */}
+
           <div className="text-center mb-6">
             <h1 className="text-3xl font-semibold text-gray-800">User Profile</h1>
             <p className="text-gray-600 mt-2">Welcome back, {User.name}!</p>
           </div>
 
-          {/* Profile Info */}
           <div className="space-y-4">
             <div className="flex justify-between">
               <span className="text-gray-600">Username:</span>
@@ -94,7 +91,8 @@ export const Account = () => {
             </div>
           </div>
 
-          {/* Button */}
+{/* //button */}
+
           <div className="mt-6 text-center">
             <button
             onClick={handleRegister} className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">

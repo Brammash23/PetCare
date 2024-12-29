@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 export const Infor = () => {
-  // State to store form values as an object
+
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -10,32 +10,29 @@ export const Infor = () => {
     address: '',
   });
 
-  // State to manage form submission status and popup visibility
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
 
-  // handleClick function to manage button click behavior
+
   const handleClick = () => {
-    // You can trigger additional logic on button click
+    
     console.log("Button clicked");
   };
 
-  // handleInputChange to update specific form field dynamically
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevState) => ({
       ...prevState,
-      [name]: value, // Update specific field
+      [name]: value,
     }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  
-    // Log form data
+
     console.log(formData);
-  
-    // Send form data to the backend
+
     axios.post("http://localhost:8081/ContactUs", formData)
       .then((res) => {
         console.log(res.data);
@@ -44,7 +41,6 @@ export const Infor = () => {
         console.error(err);
       });
   
-    // Clear input fields by resetting formData state
     setFormData({
       fullName: '',
       email: '',
@@ -52,14 +48,14 @@ export const Infor = () => {
       address: '',
     });
   
-    // Show the success popup
+
     setIsSubmitted(true);
     setIsPopupVisible(true);
   
-    // Hide the popup after 3 seconds
+
     setTimeout(() => {
       setIsPopupVisible(false);
-      setIsSubmitted(false); // Reset form submission status
+      setIsSubmitted(false);
     }, 10000);
   };
   
@@ -84,10 +80,10 @@ export const Infor = () => {
           <h3 className="text-xl font-semibold">Your Pet Adoption Farm</h3>
           <h4 className="text-lg mt-2">Address:</h4>
           <p className="mt-2">
-            No. 25, Anna Nagar Main Road, Opposite to ABC Supermarket, Madurai - 625020.
+            12,Manikam Street,Madurai,TamilNadu.
           </p>
           <img
-            src="assets/images/logo1.png"
+            src="images/Logo.png"
             alt="Pet Adoption"
             className="mt-4 mx-auto w-40 h-auto object-contain"
           />

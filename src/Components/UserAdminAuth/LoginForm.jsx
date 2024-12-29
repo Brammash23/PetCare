@@ -54,8 +54,10 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className="font-sans m-0 flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="container flex w-[700px] bg-white rounded-md shadow-md relative">
+
+
+      <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="flex flex-col md:flex-row w-full h-full max-w-none bg-white rounded-none shadow-none">
         {/* Success Message */}
         {loginSuccess && (
           <div className="absolute top-0 left-0 w-full bg-green-200 text-green-800 p-4 text-center rounded-t-md">
@@ -63,74 +65,83 @@ export const LoginForm = () => {
           </div>
         )}
 
-        <div className="left-section flex-1 bg-white-100 flex justify-center items-center">
+        {/* Left Section */}
+
+        <div className="flex-1 flex justify-center items-center bg-white">
           <img
-            className="max-w-full h-auto"
-            src="images/loginslide.jpg"
+            className="w-full h-full object-cover"
+            src="images/Login.png"
             alt="Dog"
           />
         </div>
 
-        <div className="right-section flex-1 p-12 flex flex-col bg-yellow-200 justify-center">
-          <div className="logo mb-5">
-            <MdPets className="w-48 size-20 pl-8" />
-          </div>
-          <h1 className="text-2xl font-semibold mb-7">Login</h1>
-          <form onSubmit={handleSubmit}>
-            <div className="mb-5">
-              <input
-                className="w-full p-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-300"
-                type="email"
-                placeholder="Email"
-                onChange={handleInput}
-                name="email"
-                value={user.email}
-                required
+        {/* Right Section */}
+        <div className="flex-1 flex justify-center items-center bg-yellow-200 p-6">
+        <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
+            <div className="mb-6 flex justify-center">
+              <img
+                src="images/Logo.png"
+                alt="Logo"
+                className="w-24 h-24 rounded-full border-4 border-gray-300"
               />
-              {error.email && (
-                <span className="text-sm text-red-500">{error.email}</span>
-              )}
+              
             </div>
-
-            <div className="mb-5">
-              <input
-                className="w-full p-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-300"
-                type="password"
-                placeholder="Password"
-                onChange={handleInput}
-                name="password"
-                value={user.password}
-                required
-              />
-              {error.password && (
-                <span className="text-sm text-red-500">{error.password}</span>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">
+Login</h2>
+            <form onSubmit={handleSubmit} className="login-form">
+              <div className="mb-5">
+                <input
+                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                  type="email"
+                  placeholder="Email"
+                  onChange={handleInput}
+                  name="email"
+                  value={user.email}
+                  required
+                />
+                {error.email && (
+                  <span className="text-sm text-red-500">{error.email}</span>
+                )}
+              </div>
+              <div className="mb-5">
+                <input
+                  className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                  type="password"
+                  placeholder="Password"
+                  onChange={handleInput}
+                  name="password"
+                  value={user.password}
+                  required
+                />
+                {error.password && (
+                  <span className="text-sm text-red-500">{error.password}</span>
+                )}
+              </div>
+              {error.form && (
+                <div className="text-sm text-red-500 mb-4">{error.form}</div>
               )}
-            </div>
-
-    
-            {error.form && (
-              <div className="text-sm text-red-500 mb-4">{error.form}</div>
-            )}
-
-            <button
-              className="bg-orange-300 text-white px-5 py-3 rounded hover:bg-orange-400 transition-colors cursor-pointer"
-              type="submit"
-            >
-              Login
-            </button>
-          </form>
-
-          <p className="mt-5 text-center">
-            Don't have an account?{" "}
-            <Link
-              className="text-orange-400 hover:text-orange-400 underline"
-              to="/register"
-            >
-              Register
+              <button
+                 className="w-full bg-yellow-200
+             text-white py-3 rounded hover:bg-yellow-500 transition duration-300"
+            
+                type="submit"
+              >
+                Login
+              </button>
+            </form>
+            <p className="mt-5 text-center text-gray-700">
+              Don't have an account?{" "}
+              <Link
+                className="text-yellow-500 hover:text-yellow-600 underline"
+                to="/register"
+              >
+                Register
             </Link>
-          </p>
-        </div>
+         </p>
+       </div>
       </div>
     </div>
+  </div>
+
   );
 };

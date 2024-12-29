@@ -78,78 +78,244 @@ export const Register = () => {
   };
 
   return (
-    <div className="font-sans m-0 flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="container flex w-[700px] bg-white rounded-md shadow-md">
-        {/* Right Section */}
-        <div className="right-section bg-yellow-100 flex-1 p-12 flex flex-col justify-center">
-          <div className="logo mb-5">
-            <MdPets className="w-48 size-20 pl-8" />
-          </div>
-          <h1 className="text-2xl font-medium mb-7">Please Fill out this to Register</h1>
-          <form onSubmit={handleSubmit}>
-            <input
-              className="w-full p-4 mb-5 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-300"
-              type="text"
-              placeholder="Username"
-              name="name"
-              value={User.name}
-              onChange={handleInput}
-              required
-            />
-            {Error.name && <span className="text-1xl text-sm text-red-500">{Error.name}</span>}
+//     <div className="flex flex-col md:flex-row w-full h-screen bg-gray-100">
+//     <div className="flex-1 flex justify-center items-center bg-yellow-200">
+ 
+//         {/* Right Section */}
+    
+//           <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg w-full max-w-md text-center">
+// <div className="mb-6">
+//   <img
+//     src="images/Logo.png"
+//     alt="Logo"
+//     className="w-24 h-24 rounded-full border-4 border-gray-300 mx-auto"
+//   />
+// </div>
+// <h2 className="text-2xl font-semibold text-gray-800 mb-6"> please fill this to Register</h2>
 
-            <input
-              className="w-full p-4 mb-5 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-300"
-              type="email"
-              placeholder="UserEmail"
-              name="email"
-              value={User.email}
-              onChange={handleInput}
-              required
-            />
-            {<span className="text-1xl text-sm text-red-500">{Login.email}</span>}
+//           <form onSubmit={handleSubmit}>
+//           <div className="flex flex-col items-start">
+//     <label
+//       htmlFor="fullname"
+//       className="block text-sm font-medium text-gray-700 mb-1"
+//     >
+//       Full Name
+//     </label>
+//     <input
+//              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+//               type="text"
+//               placeholder="Username"
+//               name="name"
+//               value={User.name}
+//               onChange={handleInput}
+//               required
+//             />
+//             {Error.name && <span className="text-1xl text-sm text-red-500">{Error.name}</span>}
 
-            <input
-              className="w-full p-4 mb-5 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-300"
-              type="phone"
-              placeholder="Mobile Number"
-              name="phone"
-              value={User.phone}
-              onChange={handleInput}
-              required
-            />
-            {<span className="text-1xl text-sm text-red-500">{Login.phone}</span>}
+//   </div>
 
-            <input
-              className="w-full p-4 mb-5 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-300"
-              type="password"
-              placeholder="Password"
-              name="password"
-              value={User.password}
-              onChange={handleInput}
-              required
-            />
-            {Error.password && <span className="text-red-500 text-sm block mt-1">{Error.password}</span>}
+//   <div className="flex flex-col items-start">
+//     <label
+//       htmlFor="email"
+//       className="block text-sm font-medium text-gray-700 mb-1"
+//     >
+//       Email
+//     </label>
+//     <input
+//               className="w-full p-4 mb-5 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-300"
+//               type="email"
+//               placeholder="UserEmail"
+//               name="email"
+//               value={User.email}
+//               onChange={handleInput}
+//               required
+//             />
+//                  {<span className="text-1xl text-sm text-red-500">{Login.email}</span>}
+   
+//   </div>
+          
+//   <div className="flex flex-col items-start">
+//     <label
+//       htmlFor="password"
+//       className="block text-sm font-medium text-gray-700 mb-1"
+//     >
+//       Password
+//     </label>
+//     <input
+//               className="w-full p-4 mb-5 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-300"
+//               type="phone"
+//               placeholder="Mobile Number"
+//               name="phone"
+//               value={User.phone}
+//               onChange={handleInput}
+//               required
+//             />
+//             {<span className="text-1xl text-sm text-red-500">{Login.phone}</span>}
 
-            <button
-              className="bg-orange-300 text-white px-5 py-3 rounded hover:bg-orange-400 transition-colors cursor-pointer"
-              type="submit"
-            >
-              Register
-            </button>
-            <p className="mt-5 text-center">
-              Already have an account?{" "}
-              <Link className="text-orange-400 hover:text-orange-400 underline" to="/loginform">
-                Login
-              </Link>
-            </p>
-          </form>
-        </div>
-        {/* Left Section */}
-        <div className="left-section w-96 flex-1 bg-white-100 flex justify-center items-center">
-          <img className="max-w-full h-auto" src="images/slide.jpg" alt="Dog" />
-        </div>
+//   </div>  
+//   <div className="flex flex-col items-start">
+//     <label
+//       htmlFor="Password"
+//       className="block text-sm font-medium text-gray-700 mb-1"
+//     >
+//       Password
+//     </label>
+    
+//     <input
+//               className="w-full p-4 mb-5 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-300"
+//               type="phone"
+//               placeholder="Mobile Number"
+//               name="phone"
+//               value={User.phone}
+//               onChange={handleInput}
+//               required
+//             />
+//             {<span className="text-1xl text-sm text-red-500">{Login.phone}</span>}
+    
+//   </div>
+       
+
+
+//             <input
+//               className="w-full p-4 mb-5 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-orange-300"
+//               type="password"
+//               placeholder="Password"
+//               name="password"
+//               value={User.password}
+//               onChange={handleInput}
+//               required
+//             />
+//             {Error.password && <span className="text-red-500 text-sm block mt-1">{Error.password}</span>}
+
+//             <button
+//               className="bg-orange-300 text-white px-5 py-3 rounded hover:bg-orange-400 transition-colors cursor-pointer"
+//               type="submit"
+//             >
+//               Register
+//             </button>
+//             <p className="mt-5 text-center">
+//               Already have an account?{" "}
+//               <Link className="text-orange-400 hover:text-orange-400 underline" to="/loginform">
+//                 Login
+//               </Link>
+//             </p>
+//           </form>
+//         </div>
+//         {/* Left Section */}
+//         <div className="left-section w-96 flex-1 bg-white-100 flex justify-center items-center">
+//           <img className="max-w-full h-auto" src="images/Register.jpg" alt="Dog" />
+//         </div>
+//       </div>
+//     </div>
+<div className="flex w-full h-screen bg-gray-100">
+  {/* Left Section */}
+  <div className="flex-1 flex justify-center items-center bg-yellow-200">
+    <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg w-full max-w-md text-center">
+      <div className="mb-6">
+        <img
+          src="images/Logo.png"
+          alt="Logo"
+          className="w-24 h-24 rounded-full border-4 border-gray-300 mx-auto"
+        />
       </div>
+      <h2 className="text-2xl font-semibold text-gray-800 mb-6">Please fill this to Register</h2>
+      <form onSubmit={handleSubmit}>
+        <div className="flex flex-col items-start">
+          <label
+            htmlFor="fullname"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
+            Full Name
+          </label>
+          <input
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            type="text"
+            placeholder="Username"
+            name="name"
+            value={User.name}
+            onChange={handleInput}
+            required
+          />
+          {Error.name && <span className="text-1xl text-sm text-red-500">{Error.name}</span>}
+        </div>
+        <div className="flex flex-col items-start">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
+            Email
+          </label>
+          <input
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300"
+            type="email"
+            placeholder="UserEmail"
+            name="email"
+            value={User.email}
+            onChange={handleInput}
+            required
+          />
+          {<span className="text-1xl text-sm text-red-500">{Login.email}</span>}
+        </div>
+        <div className="flex flex-col items-start">
+          <label
+            htmlFor="phone"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
+            Phone
+          </label>
+          <input
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300"
+            type="text"
+            placeholder="Mobile Number"
+            name="phone"
+            value={User.phone}
+            onChange={handleInput}
+            required
+          />
+          {<span className="text-1xl text-sm text-red-500">{Login.phone}</span>}
+        </div>
+        <div className="flex flex-col items-start">
+          <label
+            htmlFor="password"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
+            Password
+          </label>
+          <input
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300"
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={User.password}
+            onChange={handleInput}
+            required
+          />
+          {Error.password && <span className="text-red-500 text-sm block mt-1">{Error.password}</span>}
+        </div>
+        <button
+          className="bg-orange-300 text-white px-5 py-3 mt-5 rounded hover:bg-orange-400 transition-colors cursor-pointer w-full"
+          type="submit"
+        >
+          Register
+        </button>
+        <p className="mt-5 text-center">
+          Already have an account?{" "}
+          <Link className="text-orange-400 hover:text-orange-400 underline" to="/loginform">
+            Login
+          </Link>
+        </p>
+      </form>
     </div>
+  </div>
+
+  {/* Right Section */}
+  <div className="flex-1 flex justify-center items-center bg-gray-200">
+    <img className="max-w-full h-auto" src="images/Register.jpg" alt="Dog" />
+  </div>
+</div>
+
+
+
+
   );
 };

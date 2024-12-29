@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 
 export const Adopt = () => {
-  const [pets, setPets] = useState([]); 
+  const [pets, setPets] = useState([]);
+  const [filteredPets, setFilteredPets] = useState([]); // Separate state for filtered results
   const [filters, setFilters] = useState({
     petType: "all",
     breed: "all",
@@ -11,43 +12,44 @@ export const Adopt = () => {
     age: "all",
   });
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
-
+  // Fetch pets on component mount
   useEffect(() => {
-    const value = "0"; 
+    const value = "0";
     axios
-      .get(`http://localhost:8081/adopt?status=${value}`) 
+      .get(`http://localhost:8081/adopt?status=${value}`)
       .then((res) => {
         setPets(res.data);
+        setFilteredPets(res.data); // Initially, show all pets
       })
       .catch((err) => {
-        console.error("Error:", err); 
+        console.error("Error:", err);
       });
-  }, []); 
+  }, []);
 
+  // Update filters when dropdown values change
   const handleFilterChange = (e) => {
     const { id, value } = e.target;
     setFilters({ ...filters, [id]: value });
   };
 
-
-  const handleInfoClick = (petId) => {
-    console.log(petId) 
-    localStorage.setItem("selectedPetId", petId); 
-    navigate("/petinfo")
-  };
-
- 
-  const filteredPets = pets.filter((pet) => {
+  const applyFilters = () => {
     const { petType, breed, gender, age } = filters;
-    return (
-      (petType === "all" || pet.type === petType) &&
-      (breed === "all" || pet.breed === breed) &&
-      (gender === "all" || pet.gender === gender) &&
-      (age === "all" || pet.age === age)
-    );
-  });
+    const filtered = pets.filter((pet) => {
+      return (
+        (petType === "all" || pet.pet_type.toLowerCase() === petType.toLowerCase()) &&
+        (breed === "all" || pet.breed.toLowerCase().includes(breed.toLowerCase())) &&
+        (gender === "all" || pet.gender.toLowerCase() === gender.toLowerCase()) &&
+        (age === "all" || pet.age.toLowerCase() === age.toLowerCase())
+      );
+    });
+    setFilteredPets(filtered);
+  };
+  const handleInfoClick = (petId) => {
+    localStorage.setItem("selectedPetId", petId);
+    navigate("/petinfo");
+  };
 
   return (
     <>
@@ -55,7 +57,6 @@ export const Adopt = () => {
         <h1 className="text-3xl font-bold text-center mb-6">
           Find Your New Best Friend
         </h1>
-
 
         <div className="flex flex-wrap justify-between gap-4 mb-6">
           <div className="w-full sm:w-1/2 md:w-1/4">
@@ -119,7 +120,10 @@ export const Adopt = () => {
               <option value="senior">Senior</option>
             </select>
           </div>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700">
+          <button
+            onClick={applyFilters} // Apply filters on click
+            className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700"
+          >
             Search
           </button>
         </div>

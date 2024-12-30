@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Navbar } from './Navbar';
 
 export const Adopted = () => {
   const [pets, setPets] = useState([]);
@@ -28,6 +29,7 @@ export const Adopted = () => {
 
   return (
     <>
+    <Navbar />
       <div className="min-h-screen bg-gray-100 py-10 px-5">
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-10">
           All Available Pets

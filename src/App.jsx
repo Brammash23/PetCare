@@ -19,6 +19,9 @@ import { ViewAdoptions } from "./ViewAdoptions";
 import { GetInvolved } from "./GetInvolved";
 import { Admin } from "./Admin/Admin";
 import { Main } from "./Admin/Main";
+import { Adopters } from "./Admin/Adopters";
+import { Unadopted } from "./Admin/Unadopted";
+import { Adopted } from "./Admin/Adopted";
 
 
 
@@ -31,8 +34,7 @@ function App() {
    <>
  
     <div>
-  
-      {/* Routes for navigation */}
+
       <Routes>
       <Route path="/adaption_verify" element={<Adaption_Verify/>}/>
       <Route path="/petinfo" element={  <AboutPet />} />
@@ -49,8 +51,12 @@ function App() {
         <Route path="/getinvolved" element={<GetInvolved />} />
         <Route path="/main" element={<Main />} />
         <Route path="/admin" element={<Admin />} />
-        {/* Add more routes as needed */}
+        <Route path="/history" element={<Adopters />} />
+        <Route path="/unadopted" element={<Unadopted />} />
+        <Route path="/adopted" element={<Adopted />} />
+
       </Routes>
+
  
     </div>
     

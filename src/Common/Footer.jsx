@@ -54,7 +54,7 @@ export const Footer = () => {
         </div>
 
         {/* Contact Us */}
-        <div className="flex flex-col items-center w-full md:w-1/4 mb-4 md:mb-0">
+        <div className="flex flex-col text-justify items-center w-full md:w-1/4 mb-4 md:mb-0">
           <h4 className="text-white text-2xl font-bold text-center">Contact Us</h4>
           <div className="h-2 w-1/3 mx-auto bg-gray-600 mb-2" />
           <div className="flex items-center mt-2">
@@ -76,7 +76,7 @@ export const Footer = () => {
         <div className="flex flex-col items-center w-full md:w-1/4 mb-4 md:mb-0">
           <h4 className="text-white text-2xl font-bold text-center">About Us</h4>
           <div className="h-2 w-1/3 mx-auto bg-gray-600 mb-2" />
-          <p className="mt-2 text-gray-300 text-center text-md">
+          <p className="mt-2 text-gray-300 text-center text-justify text-md">
             At PetCare, we believe that pets are family. We offer a range of loving and professional
             services to keep your furry, feathered, or scaly companions happy and healthy. Whether
             it's a cozy boarding stay, exciting daycare adventures, or reliable pet sitting in your

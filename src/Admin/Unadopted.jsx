@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Navbar } from './Navbar';
 
 export const Unadopted = () => {
   const [pets, setPets] = useState([]);
@@ -7,7 +8,7 @@ export const Unadopted = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8081/pets')
+      .get('http://localhost:8081/petsfree')
       .then((response) => {
         setPets(response.data);
         setLoading(false);
@@ -28,6 +29,7 @@ export const Unadopted = () => {
 
   return (
     <>
+    <Navbar />
       <div className="min-h-screen bg-gray-100 py-10 px-5">
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-10">
           All Available Pets
@@ -39,7 +41,7 @@ export const Unadopted = () => {
               key={pet.id}
               className="bg-white rounded-lg shadow-md overflow-hidden"
             >
-              {/* Image */}
+             
               <img
                 src={pet.image ? `http://localhost:8081/uploads/${pet.image}` : '/default-image.jpg'} // Ensure image path is correct
                 alt={pet.name}

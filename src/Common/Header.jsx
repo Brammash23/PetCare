@@ -131,6 +131,12 @@ Mobile response */}
             About Us
           </Link>
           <Link
+            to="/account"
+            className="hover:bg-gray-700 hover:text-white px-4 py-2 rounded font-semibold text-white"
+          >
+            Account
+          </Link>
+          <Link
             to="/ContactUs"
             className="bg-black text-white px-6 py-2 rounded hover:bg-gray-600 font-semibold"
           >

@@ -107,7 +107,7 @@ nodemon server.js
 ### 4.Project Structure
 ```bash
 ├── Backend
-│   ├── Node Modules        # It COntains All the Packages installed for this server.
+│   ├── Node Modules        # It Contains All the Packages installed for this server.
 │   ├── index.js            # Contains the Challenge Sample code for mail to user after submission
 │   ├── server.js           # Everything related about backend,adatabse connectivity
 │   └── uploads             # It contains images and git attributes
@@ -138,6 +138,22 @@ These are the Packages Included and installed in this project
 
 ```
 
+ ## Getting Started for Database
+  ### 1.Installation
+  Install the MYSQL WorkBench for the Exceution of Queries and
+  Loading the Data
+
+  ### 2 Clone the Database Repository
+  ```bash
+  https://github.com/Brammash23/Database.git
+  ```
+ ### 3.Upload the SQL File through the Data Import
+ After Opened the MYSQL WorkBench choose 'Create a Schema' in a name and choose the schema
+ 
+ to use the option 'data import' and select from contained Folder after select a import data 
+ and Refresh
+
+
 
 # Our Project Description and Features
 It includes the following:
@@ -150,41 +166,85 @@ It includes the following:
 - React Tailwind css
 - Axios API
 
+ 
+ # Architecture and Features
+ ![Architecture](https://github.com/Brammash23/PetCare/blob/main/Preview/Architecture.png)
+ -It Reduces the Load Time for Page because to Renders from Browser Side
+ 
+ -It Renders as a Component inside the BRowser and Works as a Single Page Application
+ 
+ ---
+### User Interface and Design
+  ![Architecture](https://github.com/Brammash23/PetCare/blob/main/Preview/Login.png)
+   ![Architecture](https://github.com/Brammash23/PetCare/blob/main/Preview/Register.png)
+-We followed the Given Design given by the Team also Maintain the Same Images for this Page
 
+-We also Makes this Website Responsive and Improved the Content and Layout of Website
 
-
-
-
-
-## User Interface and Design
-
--We followed the Given Design given by the Team
--We change some textures in color also mobile responsive
-
+---
+----
 ## Backend and Database
--In our Project Database and Server Plays an Major Role in our Website
--Manages User State
--Gets Info about Pets from Database
--Manage the Pets List after adoption
--Shows the list of Pets and Adoption History
--Sends the Mail to the User After Submission
+-In our Project Database and Server Plays an Major Role in our Website in the case of Userstate,Pet Catalog,Adoption History etc..
+
+ ![Architecture](https://github.com/Brammash23/PetCare/blob/main/Preview/Catalogue.png)
+ 
+ -It Describes the List of Pets and it was Dynamcially fetched from the Database and Filter Option to Use
+ 
+  ![Architecture](https://github.com/Brammash23/PetCare/blob/main/Preview/Adoption.png)
+  
+-It Gets an Confirmation Info from the User and Not Allows an Duplicate User and only Access for Registered User 
+
+![Architecture](https://github.com/Brammash23/PetCare/blob/main/Preview/Mail_confirmation.png)
+
+-In this Project We Use the NodeMailer Package to send the Email for User Adoption.
+
+![Architecture](https://github.com/Brammash23/PetCare/blob/main/Preview/petinfo.png)
+
+-In this Project We Enables the User to View About Info for Each Pets.
+
+![Architecture](https://github.com/Brammash23/PetCare/blob/main/Preview/petlist.png)
+
+-In this Part We Showcases about Individual User adoption History of User in the View Adoptions Section
+
+---
+---
 
 ## Well Structured Code
 
--Maintain Indidual Components For Particular Section
--Use CamelCase for Readabiltiy
--Use Some Seperate Folders to Identify
--Need and Well Exceuted Code
+-Maintain Indidual Components For Particular Section and Use CamelCase for Readability
 
+![Architecture](https://github.com/Brammash23/PetCare/blob/main/Preview/structure.png)
+
+-Use Some Seperate Folders to Identify and Need and Well Exceuted Code
+
+---
+---
 
 ## Git 
+-We Regularly Used the Git to Make our Project Active and Able to trackDown Errors and Mistakes
 
--It Manitains Control,versions of code
--We can managed the versions of code
+![Architecture](https://github.com/Brammash23/PetCare/blob/main/Preview/git.png)
+
+-It Maintains the Version of Our Software or Application
+---
 
 ## Bonus Challenge
--Sends an Enail to the User to Confirm About their Adoption
--Admin Space by Route /main to Add pets on our own
+-Admin Login for Team to Add Pets Dynamcially by filling the form with required info
+
+![Architecture](https://github.com/Brammash23/PetCare/blob/main/Preview/addpets.png)
+
+```bash
+http://localhost:5173/main
+```
+
+- Login With UserName and Password
+``bash
+UserName:admin
+password:password123
+```
+
+-It Also able to check the list of Adopted and Unadopted Pets
+![Architecture](https://github.com/Brammash23/PetCare/blob/main/Preview/adopted.png)
 
 
 

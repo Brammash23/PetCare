@@ -154,6 +154,9 @@ These are the Packages Included and installed in this project
  and Refresh
 
 
+## Database Architecture
+![Architecture](https://github.com/Brammash23/PetCare/blob/main/Preview/ER.png)
+
 
 # Our Project Description and Features
 It includes the following:
@@ -231,14 +234,14 @@ It includes the following:
 ## Bonus Challenge
 -Admin Login for Team to Add Pets Dynamcially by filling the form with required info
 
-![Architecture](https://github.com/Brammash23/PetCare/blob/main/Preview/addpets.png)
+![Architecture](https://github.com/Brammash23/PetCare/blob/main/Preview/addpet.png)
 
 ```bash
 http://localhost:5173/main
 ```
 
 - Login With UserName and Password
-``bash
+```bash
 UserName:admin
 password:password123
 ```

@@ -25,6 +25,21 @@ Make sure you have the following installed on your system:
 
 ---
 
+
+## Enviroment Run
+### Youtube:
+
+our Project Was Fully Tested And Deployed in Local Server And Host with Database
+
+Link:https://www.youtube.com/watch?v=EjVOKENOM80
+
+### GCP Run
+
+Our Project was Also Exceuted In the Remote Server Using Google Cloud Platform
+
+Link:http://34.82.113.175:5173/
+
+
 ## Getting Started for FrontEnd
 
 ### 1. Clone the Repository

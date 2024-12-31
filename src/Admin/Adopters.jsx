@@ -37,7 +37,7 @@ export const Adopters = () => {
               adopters.map((adopter) => (
                 <tr key={adopter.id} className="hover:bg-gray-50">
                   <td className="border border-gray-300 px-4 py-2">{adopter.id}</td>
-                  <td className="border border-gray-300 px-4 py-2">{adopter.name}</td>
+                  <td className="border border-gray-300 px-4 py-2">{adopter.firstname}</td>
                   <td className="border border-gray-300 px-4 py-2">{adopter.email}</td>
                   <td className="border border-gray-300 px-4 py-2">{adopter.phone}</td>
                   <td className="border border-gray-300 px-4 py-2">{adopter.address}</td>
